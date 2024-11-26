@@ -1,6 +1,5 @@
 package com.juridique.juridique.Controller;
 
-
 import com.juridique.juridique.DTOs.Request.UserDtoRequest;
 import com.juridique.juridique.DTOs.Response.UserDtoResponse;
 import com.juridique.juridique.Service.UserService;
@@ -14,17 +13,8 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("api/user")
 public class UserController {
+
     private final UserService userService;
-
-    @GetMapping("{id}")
-    public UserDtoResponse getUser(@PathVariable Long id) {
-        return userService.findUserById(id);
-    }
-
-    @GetMapping
-    public List<UserDtoResponse> getAll() {
-        return userService.findAll();
-    }
 
     @PostMapping
     public UserDtoResponse create(@RequestBody @Valid UserDtoRequest user) {
@@ -34,6 +24,16 @@ public class UserController {
     @PutMapping("{id}")
     public UserDtoResponse update(@RequestBody @Valid UserDtoRequest user, @PathVariable Long id) {
         return userService.update(user, id);
+    }
+
+    @GetMapping
+    public List<UserDtoResponse> getAll() {
+        return userService.findAll();
+    }
+
+    @GetMapping("{id}")
+    public UserDtoResponse getUser(@PathVariable Long id) {
+        return userService.findUserById(id);
     }
 
     @DeleteMapping("{id}")

@@ -2,7 +2,6 @@ package com.juridique.juridique.Reposetory;
 
 import com.juridique.juridique.Model.User;
 import com.juridique.juridique.Model.UserRole;
-import org.hibernate.type.descriptor.converter.spi.JpaAttributeConverter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
