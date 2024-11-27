@@ -1,9 +1,9 @@
+// UserController.java
 package com.juridique.juridique.Controller;
 
 import com.juridique.juridique.DTOs.Request.UserDtoRequest;
 import com.juridique.juridique.DTOs.Response.UserDtoResponse;
 import com.juridique.juridique.Service.UserService;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,12 +17,12 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public UserDtoResponse create(@RequestBody @Valid UserDtoRequest user) {
+    public UserDtoResponse create(@RequestBody UserDtoRequest user) {
         return userService.create(user);
     }
 
     @PutMapping("{id}")
-    public UserDtoResponse update(@RequestBody @Valid UserDtoRequest user, @PathVariable Long id) {
+    public UserDtoResponse update(@RequestBody UserDtoRequest user, @PathVariable Long id) {
         return userService.update(user, id);
     }
 

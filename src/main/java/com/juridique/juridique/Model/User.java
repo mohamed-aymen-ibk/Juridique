@@ -1,3 +1,4 @@
+// User.java
 package com.juridique.juridique.Model;
 
 import jakarta.persistence.*;
@@ -18,7 +19,6 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -50,6 +50,6 @@ public class User {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    public void setActive(boolean active) {
-    }
+    @Column(name = "is_active")
+    private boolean isActive = true;
 }

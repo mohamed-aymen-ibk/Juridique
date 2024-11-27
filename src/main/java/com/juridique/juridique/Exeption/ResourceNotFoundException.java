@@ -1,3 +1,4 @@
+// ResourceNotFoundException.java
 package com.juridique.juridique.Exeption;
 
 public class ResourceNotFoundException extends RuntimeException {

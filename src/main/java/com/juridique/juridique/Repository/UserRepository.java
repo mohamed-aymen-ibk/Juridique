@@ -1,4 +1,5 @@
-package com.juridique.juridique.Reposetory;
+// UserRepository.java
+package com.juridique.juridique.Repository;
 
 import com.juridique.juridique.Model.User;
 import com.juridique.juridique.Model.UserRole;
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface UserReposetory extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
     List<User> findByRole(UserRole role);
     boolean existsByEmail(String email);
