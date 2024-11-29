@@ -3,7 +3,7 @@ package com.juridique.juridique.Controller;
 
 import com.juridique.juridique.DTOs.Request.UserDtoRequest;
 import com.juridique.juridique.DTOs.Response.UserDtoResponse;
-import com.juridique.juridique.Service.UserService;
+import com.juridique.juridique.Service.Interfaces.UserServiceInterface;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
@@ -17,7 +17,7 @@ import java.util.List;
 @Validated
 public class UserController {
 
-    private final UserService userService;
+    private final UserServiceInterface userService;
 
     @PostMapping
     public UserDtoResponse create(@RequestBody @Valid UserDtoRequest user) {

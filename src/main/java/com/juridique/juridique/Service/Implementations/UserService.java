@@ -1,5 +1,5 @@
 // UserService.java
-package com.juridique.juridique.Service;
+package com.juridique.juridique.Service.Implementations;
 
 import com.juridique.juridique.DTOs.Request.UserDtoRequest;
 import com.juridique.juridique.DTOs.Response.UserDtoResponse;
@@ -7,6 +7,7 @@ import com.juridique.juridique.Exeption.ResourceNotFoundException;
 import com.juridique.juridique.Model.User;
 import com.juridique.juridique.Model.UserRole;
 import com.juridique.juridique.Repository.UserRepository;
+import com.juridique.juridique.Service.Interfaces.UserServiceInterface;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
-public class UserService {
+public class UserService implements UserServiceInterface {
 
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
